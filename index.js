@@ -26,15 +26,18 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // Render DOM elementini belirtilen body elementine ekle
 document.body.appendChild(renderer.domElement);
 
-loader.load('models/deneme2.glb', (gltf) => {
+loader.load('models/dgkn.glb', (gltf) => {
     let model = gltf.scene;
     scene.add(model);
     model.rotation.x = 89.8;
+    model.rotation.y = 89.5;
+    //model.rotation.z = 88.5;
 
     function animate() {
         requestAnimationFrame(animate);
-        model.rotation.z += 0.01;
-        //model.rotation.x += 0.01;
+        //model.rotation.z += 0.01;
+        model.rotation.x += 0.01;
+        model.rotation.y += 0.01;
         renderer.render(scene, camera);
     }
     animate();
